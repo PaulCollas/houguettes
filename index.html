@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/dist/output.css" rel="stylesheet" />
+    <script
+      src="https://kit.fontawesome.com/c42ff2c019.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
+
+  <body>
+    <nav
+      class="sticky top-0 flex h-[12vh] items-center justify-around bg-white px-24 font-Acumin text-xl font-bold text-blue shadow-lg"
+    >
+      <div class="h-3/5">
+        <img
+          class="h-full object-contain"
+          src="/img/icon-nav.svg"
+          alt="Icone de navigation représentant une maison"
+        />
+      </div>
+      <ul class="flex gap-32">
+        <li><a href=""> Les locations</a></li>
+        <li><a href=""> Préparez votre séjour</a></li>
+      </ul>
+      <ul class="flex h-1/4 items-center gap-6">
+        <li class="h-full">
+          <a href=""><i class="fa-solid fa-user h-full"></i></a>
+        </li>
+        <li class="h-full">
+          <a href=""><i class="fa-solid fa-envelope h-full"></i></a>
+        </li>
+        <li><button class="bg-blue py-3 px-5 text-white">Réserver</button></li>
+      </ul>
+    </nav>
+
+    <main class="h-[30vh] bg-slate-300"></main>
+
+    <footer class="fixed bottom-0 w-full">
+      <section
+        class="flex h-[25vh] justify-center divide-x-2 bg-blue p-10 text-xl text-white"
+      >
+        <div class="flex w-1/4 flex-col justify-between">
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-phone"></i>
+            <p>06 80 70 67 28</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-location-dot"></i>
+            <p>Les Houguettes, 50340 Siouville-Hague</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-envelope"></i>
+            <p>leshouguettes@gmail.com</p>
+          </div>
+        </div>
+        <div class="flex w-1/4 flex-col justify-between text-center">
+          <h2>Nos locations</h2>
+          <h2>Préparez votre séjour</h2>
+          <h2>Mon Compte</h2>
+          <h2>Contact</h2>
+        </div>
+        <div
+          class="flex w-1/4 flex-col items-center justify-between text-center font-bold"
+        >
+          <h2>Suivez-nous :</h2>
+          <div class="flex h-2/5 gap-5">
+            <i class="fa-brands fa-facebook-f h-full"></i>
+            <img
+              class="h-full"
+              src="/img/tripadvisor.svg"
+              alt="Icone de tripadvisor"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="flex justify-center divide-x-2 divide-blue p-5 text-blue">
+        <h1 class="px-5 text-xl font-bold">Mentions Légales</h1>
+        <h1 class="px-5 text-xl font-bold">Conditions générales</h1>
+        <h1 class="px-5 text-xl font-bold">Conditions générales de vente</h1>
+      </section>
+    </footer>
+  </body>
+</html>
