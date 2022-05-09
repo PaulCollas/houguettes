@@ -31,3 +31,12 @@
 .circlereal:hover .foreground {
   stroke-dashoffset: 0 !important;
 }
+
+#containercarrousel {
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+}
+
+#containercarrousel::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
