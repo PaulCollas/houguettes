@@ -16,24 +16,23 @@
     <nav
       class="sticky top-0 z-50 flex h-[8vh] items-center justify-around bg-white font-Acumin text-lg font-bold text-blue shadow-lg lg:h-[12vh] lg:px-24 lg:text-xl"
     >
-      <div class="flex h-3/5 w-1/3 gap-2 lg:w-auto">
+      <a href="index.html" class="flex h-3/5 w-1/3 lg:w-auto">
         <img
-          class="h-full object-contain"
-          src="./img/icon-nav.svg"
+          class="w-full object-contain"
+          src="./img/auxquatrevents1.png"
           alt="Icone de navigation représentant une maison"
         />
-        <h1 class="lg:hidden">Les Houguettes</h1>
-      </div>
+      </a>
       <div
         id="burger"
-        class="flex h-1/4 w-8 flex-col items-end justify-between lg:hidden"
+        class="flex h-full w-8 flex-col items-end justify-center gap-[0.35rem] lg:hidden"
       >
         <span class="h-[3px] w-full rounded-full bg-blue"></span>
         <span class="h-[3px] w-full rounded-full bg-blue"></span>
         <span class="h-[3px] w-full rounded-full bg-blue"></span>
       </div>
       <ul class="hidden gap-32 lg:flex">
-        <li><a href="./page-locations.html"> Les locations</a></li>
+        <li><a href=""> Les locations</a></li>
         <li><a href=""> Préparez votre séjour</a></li>
       </ul>
       <ul class="hidden h-1/4 items-center gap-6 lg:flex">
@@ -68,7 +67,7 @@
           class="absolute top-0 flex h-full w-full items-center justify-center lg:justify-start lg:pl-36"
         >
           <div
-            class="flex h-1/2 w-4/5 flex-col justify-between bg-white p-10 text-blue lg:w-[38%] lg:p-14"
+            class="flex w-4/5 flex-col justify-between gap-5 bg-white p-7 text-blue lg:w-[38%] lg:gap-16 lg:p-14"
           >
             <h1 class="font-Tahu text-3xl lg:text-[3.25rem]">
               Bienvenue Aux Quatres Vents
@@ -78,12 +77,14 @@
               en Normandie à deux pas de la mer. Vous trouverez ici toutes les
               informations nécessaires.
             </p>
-            <div class="flex gap-5">
-              <button class="bg-blue py-3 px-5 text-white lg:w-1/3 lg:text-2xl">
+            <div class="flex gap-3">
+              <button
+                class="bg-blue px-5 py-2 text-white lg:w-1/3 lg:py-3 lg:px-5 lg:text-2xl"
+              >
                 Réserver
               </button>
               <button
-                class="rounded-lg border border-solid border-blue py-3 px-5 lg:w-1/2 lg:text-2xl"
+                class="whitespace-nowrap rounded-lg border border-solid border-blue px-3 lg:w-1/2 lg:py-3 lg:px-3 lg:text-2xl"
               >
                 En savoir plus
               </button>
@@ -91,7 +92,7 @@
           </div>
         </div>
         <div
-          class="absolute bottom-0 left-0 flex h-[124px] w-full animate-bounce cursor-pointer justify-center"
+          class="absolute -bottom-5 left-0 flex h-[124px] w-full animate-bounce cursor-pointer justify-center"
         >
           <a
             href="#reseaux"
@@ -246,7 +247,8 @@
             </svg>
 
             <svg
-              onclick="Carrousel('right', 'imgcaroussel', 3)"
+              onclick="Carrousel('right', 'imgcaroussel',ml
+              )"
               xmlns="http://www.w3.org/2000/svg"
               class="after h-12 rotate-180 cursor-pointer"
               fill="none"
