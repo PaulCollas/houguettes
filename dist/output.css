@@ -717,6 +717,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 14rem;
 }
 
+.h-4\/5 {
+  height: 80%;
+}
+
+.h-4 {
+  height: 1rem;
+}
+
 .max-h-0 {
   max-height: 0px;
 }
