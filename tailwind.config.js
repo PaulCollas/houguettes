@@ -1,6 +1,7 @@
 module.exports = {
   content: ["./src/**/*.{html,js}",
-    './index.html',],
+    './index.html',
+    './page-locations.html',],
   theme: {
     extend: {
       colors: {
