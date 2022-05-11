@@ -593,6 +593,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: block;
 }
 
+.inline-block {
+  display: inline-block;
+}
+
 .flex {
   display: flex;
 }
@@ -705,24 +709,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 35vh;
 }
 
-.h-screen {
-  height: 100vh;
-}
-
-.h-1\/3 {
-  height: 33.333333%;
-}
-
-.h-fit {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-
-.h-max {
-  height: -webkit-max-content;
-  height: -moz-max-content;
-  height: max-content;
+.h-96 {
+  height: 24rem;
 }
 
 .max-h-0 {
@@ -779,8 +767,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 1.5rem;
 }
 
-.w-10 {
-  width: 2.5rem;
+.w-1 {
+  width: 0.25rem;
+}
+
+.w-1\/2 {
+  width: 50%;
 }
 
 .flex-1 {
@@ -791,16 +783,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   flex-shrink: 0;
 }
 
-.shrink {
-  flex-shrink: 1;
-}
-
 .grow {
   flex-grow: 1;
 }
 
 .basis-full {
   flex-basis: 100%;
+}
+
+.basis-1\/2 {
+  flex-basis: 50%;
+}
+
+.basis-2\/5 {
+  flex-basis: 40%;
 }
 
 .origin-center {
@@ -878,6 +874,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .flex-col {
   flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
 }
 
 .items-end {
@@ -969,10 +969,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   overflow-x: scroll;
 }
 
-.overflow-ellipsis {
-  text-overflow: ellipsis;
-}
-
 .whitespace-nowrap {
   white-space: nowrap;
 }
@@ -991,6 +987,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .border {
   border-width: 1px;
+}
+
+.border-2 {
+  border-width: 2px;
 }
 
 .border-solid {
@@ -1068,6 +1068,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding: 2.5rem;
 }
 
+.p-3 {
+  padding: 0.75rem;
+}
+
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -1098,6 +1102,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-bottom: 2.5rem;
 }
 
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
 .pt-10 {
   padding-top: 2.5rem;
 }
@@ -1110,12 +1119,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-bottom: 2.5rem;
 }
 
-.pt-\[\] {
-  padding-top: ;
+.pt-0 {
+  padding-top: 0px;
 }
 
-.pt-\[100\%\] {
-  padding-top: 100%;
+.pb-5 {
+  padding-bottom: 1.25rem;
+}
+
+.text-left {
+  text-align: left;
 }
 
 .text-center {
@@ -1165,6 +1178,15 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 1rem;
 }
 
+.text-\[0\] {
+  font-size: 0;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
 .font-bold {
   font-weight: 700;
 }
@@ -1193,12 +1215,21 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(254 240 138 / var(--tw-text-opacity));
 }
 
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
 .opacity-0 {
   opacity: 0;
 }
 
 .opacity-20 {
   opacity: 0.2;
+}
+
+.opacity-100 {
+  opacity: 1;
 }
 
 .shadow-lg {
@@ -1276,6 +1307,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   /* for Chrome, Safari, and Opera */
 }
 
+.before\:content-\[\'Show_More\'\]::before {
+  --tw-content: 'Show More';
+  content: var(--tw-content);
+}
+
 .after\:block::after {
   content: var(--tw-content);
   display: block;
@@ -1286,9 +1322,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-bottom: 100%;
 }
 
-.after\:pb-\[110\%\]::after {
+.before\:checked\:content-\[\'Show_Less\'\]:checked::before {
+  --tw-content: 'Show Less';
   content: var(--tw-content);
-  padding-bottom: 110%;
+}
+
+.focus\:hidden:focus {
+  display: none;
 }
 
 .group:hover .group-hover\:-rotate-90 {
@@ -1298,6 +1338,29 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .group:hover .group-hover\:opacity-100 {
   opacity: 1;
+}
+
+.peer:checked ~ .peer-checked\:max-h-96 {
+  max-height: 24rem;
+}
+
+.peer:checked ~ .peer-checked\:text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.peer:checked ~ .peer-checked\:text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.peer:checked ~ .peer-checked\:opacity-100 {
+  opacity: 1;
+}
+
+.peer:checked ~ .before\:peer-checked\:content-\[\'Show_Less\'\]::before {
+  --tw-content: 'Show Less';
+  content: var(--tw-content);
 }
 
 @media (min-width: 640px) {
@@ -1418,6 +1481,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .lg\:w-2\/5 {
     width: 40%;
+  }
+
+  .lg\:flex-1 {
+    flex: 1 1 0%;
+  }
+
+  .lg\:flex-initial {
+    flex: 0 1 auto;
+  }
+
+  .lg\:basis-1\/2 {
+    flex-basis: 50%;
   }
 
   .lg\:flex-row {

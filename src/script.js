@@ -264,3 +264,45 @@ if (avisClients.length != 0) {
         }
     })
 }
+
+/* SINGLE LOCATION ANIMATION */
+
+function SingleLocateShowImage(item) {
+    console.log(item.classList.contains("border-2"));
+    document.querySelectorAll('.imgLocationSingle').forEach(element => {
+        if (element.classList.contains('border-2')) {
+
+            element.classList.remove('border-2');
+            element.classList.remove('border-solid');
+            element.classList.remove('border-blue');
+        }
+    })
+    document.getElementById('imagePresentation').src = item.src
+    item.classList.toggle('border-2');
+    item.classList.toggle('border-solid');
+    item.classList.toggle('border-blue');
+}
+
+function ChangeText(item) {
+    if (item.innerHTML !== "En voir moins") {
+        item.innerHTML = "En voir moins";
+    } else {
+        item.innerHTML = "En voir plus ...";
+    }
+    item.previousElementSibling.querySelector('span').classList.toggle('max-h-96');
+    item.previousElementSibling.querySelector('span').classList.toggle('text-[0]');
+    item.previousElementSibling.querySelector('span').classList.toggle('opacity-100');
+}
+
+/* GOOGLE MAPS API */
+
+let map;
+
+function initMap() {
+    map = new google.maps.Map(document.getElementById("map"), {
+        center: { lat: -34.397, lng: 150.644 },
+        zoom: 8,
+    });
+}
+
+window.initMap = initMap;

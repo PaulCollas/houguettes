@@ -2,7 +2,7 @@ module.exports = {
   content: ["./src/**/*.{html,js}",
     './index.html',
     './page-locations.html',
-    './page-locations.html',],
+    './single-locations.html',],
   theme: {
     extend: {
       colors: {
