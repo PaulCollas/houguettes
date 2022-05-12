@@ -289,20 +289,28 @@ function ChangeText(item) {
     } else {
         item.innerHTML = "En voir plus ...";
     }
-    item.previousElementSibling.querySelector('span').classList.toggle('max-h-96');
-    item.previousElementSibling.querySelector('span').classList.toggle('text-[0]');
-    item.previousElementSibling.querySelector('span').classList.toggle('opacity-100');
+    item.previousElementSibling.classList.toggle('line-clamp-3');
+
+
 }
 
-/* GOOGLE MAPS API */
+/* MAPS API */
 
-let map;
-
-function initMap() {
-    map = new google.maps.Map(document.getElementById("map"), {
-        center: { lat: -34.397, lng: 150.644 },
-        zoom: 8,
+if (document.getElementById('map')) {
+    mapboxgl.accessToken = 'pk.eyJ1Ijoicm9iaXRjaCIsImEiOiJja3R3cWw2cGUwd3d0MzBwODNuODNsZjBjIn0.8Z1IjDqZ1sGpn7UqaO8qGQ';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11',
+        center: [-0.36964669993827215, 49.18182136994545],
+        zoom: 9
     });
 }
 
-window.initMap = initMap;
+function ReadMoreText(item) {
+    item.previousElementSibling.classList.toggle('line-clamp-2');
+    if (item.innerHTML !== "En voir moins") {
+        item.innerHTML = "En voir moins";
+    } else {
+        item.innerHTML = "En voir plus ...";
+    }
+}
