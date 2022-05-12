@@ -2,7 +2,8 @@ module.exports = {
   content: ["./src/**/*.{html,js}",
     './index.html',
     './page-locations.html',
-    './single-locations.html',],
+    './single-locations.html',
+    './page-sejour.html',],
   theme: {
     extend: {
       colors: {
@@ -15,5 +16,5 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/line-clamp'),],
 }
