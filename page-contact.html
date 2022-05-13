@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./dist/output.css" rel="stylesheet" />
+    <script
+      src="https://kit.fontawesome.com/c42ff2c019.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Document</title>
+  </head>
+
+  <body>
+    <nav
+      class="sticky top-0 z-50 flex h-[8vh] items-center justify-around bg-white font-Acumin text-lg font-bold text-blue shadow-lg lg:h-[12vh] lg:px-24 lg:text-xl"
+    >
+      <a href="index.html" class="flex h-4/5 w-1/3 lg:w-auto">
+        <img
+          class="w-full object-contain"
+          src="./img/auxquatrevents1.png"
+          alt="Icone de navigation représentant une maison"
+        />
+      </a>
+      <div
+        id="burger"
+        class="flex h-full w-8 flex-col items-end justify-center gap-[0.35rem] lg:hidden"
+      >
+        <span class="h-[3px] w-full rounded-full bg-blue"></span>
+        <span class="h-[3px] w-full rounded-full bg-blue"></span>
+        <span class="h-[3px] w-full rounded-full bg-blue"></span>
+      </div>
+      <ul class="hidden gap-32 lg:flex">
+        <li><a href="./page-locations.html"> Les locations</a></li>
+        <li><a href=""> Préparez votre séjour</a></li>
+      </ul>
+      <ul class="hidden h-1/4 items-center gap-6 lg:flex">
+        <li class="h-full">
+          <a href=""><i class="fa-solid fa-user h-full"></i></a>
+        </li>
+        <li class="h-full">
+          <a href=""><i class="fa-solid fa-envelope h-full"></i></a>
+        </li>
+        <li><button class="bg-blue py-3 px-5 text-white">Réserver</button></li>
+      </ul>
+      <ul
+        id="menuBurger"
+        class="invisible absolute top-full flex max-h-0 w-full flex-col gap-3 overflow-hidden bg-blue text-center font-medium text-white transition-all duration-700"
+      >
+        <li><a href="">Accueil</a></li>
+        <li><a href="">Nos Locations</a></li>
+        <li><a href="">Préparez votre séjour</a></li>
+        <li><a href="">Mon Compte</a></li>
+        <li><a href="">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main class="lg:flex lg:h-[90vh] lg:justify-between">
+      <section
+        class="flex flex-col justify-center gap-5 p-12 lg:w-1/2 lg:gap-10 lg:px-24"
+      >
+        <h1 class="font-Tahu text-4xl lg:text-7xl">Nous Contacter</h1>
+        <p class="text-lg lg:text-3xl">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi eius
+          modi deleniti temporibus, voluptatibus quae.
+        </p>
+        <div class="flex flex-col gap-5 text-sm lg:gap-10 lg:text-2xl">
+          <div class="flex items-center gap-2 lg:gap-5">
+            <em class="fa-solid fa-phone aspect-square h-5 lg:h-8"></em>
+            <h2 class="text-">06 80 70 67 28</h2>
+          </div>
+          <div class="flex items-center gap-2 whitespace-nowrap lg:gap-5">
+            <em class="fa-solid fa-location-dot aspect-square h-5 lg:h-8"></em>
+            <h2 class="text-">Les Houguettes, 50340 Siouville-Hague</h2>
+          </div>
+          <div class="flex items-center gap-2 lg:gap-5">
+            <em class="fa-solid fa-envelope aspect-square h-5 lg:h-8"></em>
+            <h2 class="text-">leshouguettes@gmail.com</h2>
+          </div>
+          <div class="flex items-center gap-2 lg:gap-5">
+            <em class="fa fa-facebook aspect-square h-5 lg:h-8"></em>
+            <h2 class="text-">Les Houguettes</h2>
+          </div>
+        </div>
+      </section>
+      <section class="mb-10 lg:relative lg:w-1/3">
+        <img
+          class="hidden h-full object-cover lg:block"
+          src="./img/photoaccueil.jpg"
+          alt=""
+        />
+        <form
+          action=""
+          class="flex flex-wrap justify-end gap-5 bg-blue p-12 lg:absolute lg:top-1/2 lg:right-1/2 lg:mb-12 lg:h-2/3 lg:w-full lg:-translate-y-1/2 lg:justify-center lg:gap-10 lg:text-lg"
+        >
+          <div class="flex w-full gap-5 lg:gap-10">
+            <input
+              class="w-full p-3"
+              type="text"
+              name="nom"
+              id="nom"
+              placeholder="Nom"
+            />
+            <input
+              class="w-full p-3"
+              type="text"
+              name="prenom"
+              id="prenom"
+              placeholder="Prenom"
+            />
+          </div>
+          <input
+            class="w-full p-3"
+            type="email"
+            name="mail"
+            id="mail"
+            placeholder="Adresse e-mail"
+          />
+          <textarea
+            class="w-full p-3"
+            name="message"
+            id="message"
+            cols="30"
+            rows="5"
+            placeholder="Message"
+          ></textarea>
+          <input
+            class="cursor-pointer border-2 border-white p-3 text-white lg:w-2/5 lg:p-0 lg:py-3 lg:text-xl"
+            type="submit"
+            value="Envoyer"
+          />
+        </form>
+      </section>
+    </main>
+
+    <footer class="w-full">
+      <secti
+        6
+        class="flex flex-col justify-center divide-y-2 bg-blue px-10 text-base text-white lg:h-[25vh] lg:flex-row lg:divide-y-0 lg:divide-x-2 lg:p-10 lg:text-xl"
+      >
+        <div
+          class="sm lg:text-xl:items-center flex flex-col justify-between gap-5 p-8 lg:w-1/4 lg:items-start lg:p-0"
+        >
+          <div class="flex items-center gap-5 sm:w-1/2 lg:w-auto">
+            <i class="fa-solid fa-phone h-7"></i>
+            <p>06 80 70 67 28</p>
+          </div>
+          <div
+            class="flex items-center gap-5 sm:w-1/2 lg:w-auto lg:justify-center"
+          >
+            <i class="fa-solid fa-location-dot h-7"></i>
+            <p>Les Houguettes, 50340 Siouville-Hague</p>
+          </div>
+          <div
+            class="flex items-center gap-5 sm:w-1/2 lg:w-auto lg:justify-center"
+          >
+            <i class="fa-solid fa-envelope h-7"></i>
+            <p>leshouguettes@gmail.com</p>
+          </div>
+        </div>
+        <div
+          class="flex flex-col items-center justify-between gap-2 p-8 text-center lg:w-1/4 lg:p-0"
+        >
+          <h2>Nos locations</h2>
+          <h2>Préparez votre séjour</h2>
+          <h2>Mon Compte</h2>
+          <h2>Contact</h2>
+        </div>
+        <div
+          class="flex flex-col items-center gap-12 p-8 text-center font-bold lg:w-1/4 lg:justify-between lg:p-0"
+        >
+          <h2>Suivez-nous :</h2>
+          <div class="flex h-8 gap-10 lg:h-1/3">
+            <i class="fa-brands fa-facebook-f h-full"></i>
+            <img
+              class="h-full"
+              src="./img/tripadvisor.svg"
+              alt="Icone de tripadvisor"
+            />
+          </div>
+        </div>
+      </secti>
+      <section class="flex justify-center divide-x-2 divide-blue p-5 text-blue">
+        <h1 class="px-5 text-center text-xs font-bold lg:text-xl">
+          Mentions Légales
+        </h1>
+        <h1 class="px-5 text-center text-xs font-bold lg:text-xl">
+          Conditions générales
+        </h1>
+        <h1 class="px-5 text-center text-xs font-bold lg:text-xl">
+          Conditions générales de vente
+        </h1>
+      </section>
+    </footer>
+
+    <script src="./src/script.js"></script>
+  </body>
+</html>

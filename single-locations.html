@@ -20,7 +20,7 @@
 
   <body>
     <nav
-      class="sticky top-0 z-50 flex h-[8vh] items-center justify-around bg-white font-Acumin text-lg font-bold text-blue shadow-lg lg:h-[12vh] lg:px-24 lg:text-xl"
+      class="sticky top-0 z-50 flex h-[8vh] flex-row-reverse items-center justify-around bg-white font-Acumin text-lg font-bold text-blue shadow-lg lg:h-[12vh] lg:flex-row lg:px-24 lg:text-xl"
     >
       <a href="index.html" class="flex h-4/5 w-1/3 lg:w-auto">
         <img
@@ -54,9 +54,9 @@
         id="menuBurger"
         class="invisible absolute top-full flex max-h-0 w-full flex-col gap-3 overflow-hidden bg-blue text-center font-medium text-white transition-all duration-700"
       >
-        <li><a href="">Accueil</a></li>
-        <li><a href="">Nos Locations</a></li>
-        <li><a href="">Préparez votre séjour</a></li>
+        <li><a href="./index.html">Accueil</a></li>
+        <li><a href="./page-locations.html">Nos Locations</a></li>
+        <li><a href="./page-sejour.html">Préparez votre séjour</a></li>
         <li><a href="">Mon Compte</a></li>
         <li><a href="">Contact</a></li>
       </ul>
@@ -168,7 +168,7 @@
             </button>
           </div>
           <div
-            class="hidden w-2/5 flex-col bg-white p-5 shadow-[0_0px_10px_0_rgba(0,0,0,0.3)] lg:flex"
+            class="hidden w-2/5 flex-col bg-white p-5 shadow-[0_0px_10px_0_rgba(0,0,0,0.3)] lg:flex lg:self-center"
           >
             <button
               class="flex items-center justify-center gap-3 bg-blue p-5 text-xl font-bold text-white"
@@ -192,11 +192,13 @@
             <button class="pt-5 text-blue">Voir les avis</button>
           </div>
         </section>
-        <section class="flex flex-col gap-5 px-10 py-5 lg:w-1/2">
+        <section
+          class="flex flex-col gap-5 px-10 py-5 lg:w-1/2 lg:justify-around"
+        >
           <h1 class="h-fit w-full py-4 text-xl lg:p-0 lg:text-4xl">
             Caractéristiques
           </h1>
-          <span class="h-[2px] w-full bg-blue"></span>
+          <span class="hidden h-[2px] w-full bg-blue lg:block"></span>
           <div class="flex h-3/5 flex-wrap justify-between gap-5">
             <div class="flex basis-2/5 items-center text-center lg:text-2xl">
               <svg
@@ -392,6 +394,82 @@
                 </g>
               </svg>
 
+              <h2 class="w-full">4 lits</h2>
+            </div>
+            <div class="flex basis-2/5 items-center text-center lg:text-2xl">
+              <svg
+                class="lg:h-2/3 lg:w-fit"
+                id="Groupe_2770"
+                data-name="Groupe 2770"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="24.439"
+                height="24.439"
+                viewBox="0 0 24.439 24.439"
+              >
+                <defs>
+                  <clipPath id="clip-path">
+                    <rect
+                      id="Rectangle_704"
+                      data-name="Rectangle 704"
+                      width="24.439"
+                      height="24.439"
+                      fill="#163e4b"
+                    />
+                  </clipPath>
+                </defs>
+                <g
+                  id="Groupe_2769"
+                  data-name="Groupe 2769"
+                  clip-path="url(#clip-path)"
+                >
+                  <path
+                    id="Tracé_4201"
+                    data-name="Tracé 4201"
+                    d="M2,0H22.454V5.833H2ZM13.106,8.45h6.06v2.139h-6.06Zm-7.924,0h6.046v2.139H5.182ZM.03,20.775l24.318.254-.03,3.41L0,24.2ZM1.788,7.284H22.56l1.879,12.489c-7.242,0-17.015-.195-24.257-.195Q.976,13.431,1.788,7.284"
+                    fill="#163e4b"
+                    fill-rule="evenodd"
+                  />
+                </g>
+              </svg>
+              <h2 class="w-full">4 lits</h2>
+            </div>
+            <div class="flex basis-2/5 items-center text-center lg:text-2xl">
+              <svg
+                class="lg:h-2/3 lg:w-fit"
+                id="Groupe_2770"
+                data-name="Groupe 2770"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                width="24.439"
+                height="24.439"
+                viewBox="0 0 24.439 24.439"
+              >
+                <defs>
+                  <clipPath id="clip-path">
+                    <rect
+                      id="Rectangle_704"
+                      data-name="Rectangle 704"
+                      width="24.439"
+                      height="24.439"
+                      fill="#163e4b"
+                    />
+                  </clipPath>
+                </defs>
+                <g
+                  id="Groupe_2769"
+                  data-name="Groupe 2769"
+                  clip-path="url(#clip-path)"
+                >
+                  <path
+                    id="Tracé_4201"
+                    data-name="Tracé 4201"
+                    d="M2,0H22.454V5.833H2ZM13.106,8.45h6.06v2.139h-6.06Zm-7.924,0h6.046v2.139H5.182ZM.03,20.775l24.318.254-.03,3.41L0,24.2ZM1.788,7.284H22.56l1.879,12.489c-7.242,0-17.015-.195-24.257-.195Q.976,13.431,1.788,7.284"
+                    fill="#163e4b"
+                    fill-rule="evenodd"
+                  />
+                </g>
+              </svg>
               <h2 class="w-full">4 lits</h2>
             </div>
             <div class="flex basis-2/5 items-center text-center lg:text-2xl">

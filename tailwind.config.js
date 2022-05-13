@@ -3,7 +3,8 @@ module.exports = {
     './index.html',
     './page-locations.html',
     './single-locations.html',
-    './page-sejour.html',],
+    './page-sejour.html',
+    './page-contact.html',],
   theme: {
     extend: {
       colors: {
