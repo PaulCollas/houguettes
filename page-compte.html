@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./dist/output.css" rel="stylesheet" />
+    <script
+      src="https://kit.fontawesome.com/c42ff2c019.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <title>Document</title>
+  </head>
+
+  <body>
+    <nav
+      class="sticky top-0 z-50 flex h-[8vh] items-center justify-around bg-white font-Acumin text-lg font-bold text-blue shadow-lg lg:h-[12vh] lg:px-24 lg:text-xl"
+    >
+      <a href="index.html" class="flex h-4/5 w-1/3 lg:w-auto">
+        <img
+          class="w-full object-contain"
+          src="./img/auxquatrevents1.png"
+          alt="Icone de navigation représentant une maison"
+        />
+      </a>
+      <div
+        id="burger"
+        class="flex h-full w-8 flex-col items-end justify-center gap-[0.35rem] lg:hidden"
+      >
+        <span class="h-[3px] w-full rounded-full bg-blue"></span>
+        <span class="h-[3px] w-full rounded-full bg-blue"></span>
+        <span class="h-[3px] w-full rounded-full bg-blue"></span>
+      </div>
+      <ul class="hidden gap-32 lg:flex">
+        <li><a href="./page-locations.html"> Les locations</a></li>
+        <li><a href=""> Préparez votre séjour</a></li>
+      </ul>
+      <ul class="hidden h-1/4 items-center gap-6 lg:flex">
+        <li class="h-full">
+          <a href=""><i class="fa-solid fa-user h-full"></i></a>
+        </li>
+        <li class="h-full">
+          <a href=""><i class="fa-solid fa-envelope h-full"></i></a>
+        </li>
+        <li><button class="bg-blue py-3 px-5 text-white">Réserver</button></li>
+      </ul>
+      <ul
+        id="menuBurger"
+        class="invisible absolute top-full flex max-h-0 w-full flex-col gap-3 overflow-hidden bg-blue text-center font-medium text-white transition-all duration-700"
+      >
+        <li><a href="">Accueil</a></li>
+        <li><a href="">Nos Locations</a></li>
+        <li><a href="">Préparez votre séjour</a></li>
+        <li><a href="">Mon Compte</a></li>
+        <li><a href="">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main class="m-10 flex flex-col gap-5 text-blue lg:mx-36 lg:gap-14">
+      <h1 class="text-3xl font-bold lg:text-5xl">Mon Compte</h1>
+      <p class="text-slate-500 lg:text-xl">
+        Bienvenue sur votre page personnelle, ici vous pouvez gérer vos
+        informations personnelles.
+      </p>
+      <div
+        class="accordion flex flex-col overflow-hidden border-2 border-solid border-blue lg:text-2xl"
+      >
+        <div
+          class="flex items-center justify-between p-5 font-bold lg:p-10"
+          onclick="Accordion(this)"
+        >
+          <h2>Informations Personnelles</h2>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 transition-all duration-700 lg:h-12 lg:w-12"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </div>
+        <div
+          class="flex max-h-0 flex-col gap-0 transition-all duration-700 lg:flex-row lg:flex-wrap lg:gap-10"
+        >
+          <div class="flex flex-col gap-2 lg:w-2/5">
+            <h3>Nom</h3>
+            <p class="select-all border-[1px] border-solid border-blue p-3">
+              TestNom
+            </p>
+          </div>
+          <div class="flex flex-col gap-2 lg:w-2/5">
+            <h3>Prénom</h3>
+            <p class="select-all border-[1px] border-solid border-blue p-3">
+              TestPrénom
+            </p>
+          </div>
+          <div class="flex flex-col gap-2 lg:w-2/5">
+            <h3>Adresse e-mail</h3>
+            <p class="select-all border-[1px] border-solid border-blue p-3">
+              TestAdresseEmail
+            </p>
+          </div>
+          <div class="flex flex-col gap-2 lg:w-2/5">
+            <h3>Numéro de téléphone</h3>
+            <p class="select-all border-[1px] border-solid border-blue p-3">
+              TestTel
+            </p>
+          </div>
+          <form class="my-2 flex items-center justify-between lg:gap-10">
+            <div
+              class="h-14 w-14 shrink-0 overflow-hidden rounded-full lg:h-20 lg:w-20"
+            >
+              <img
+                class="profilactuel h-full object-cover"
+                src="./img/photoaccueil.jpg"
+                alt=""
+              />
+            </div>
+            <label
+              class="rounded-full border-2 border-blue p-2 text-center text-sm lg:text-xl"
+              for="photoprofil"
+              >Sélectionner une image</label
+            >
+            <input
+              onchange="ChangePhotoProfil()"
+              class="nouveauprofil hidden"
+              type="file"
+              name="photoprofil"
+              id="photoprofil"
+            />
+          </form>
+          <div class="flex w-full items-center justify-center">
+            <button
+              class="w-2/3 rounded-lg bg-blue p-3 text-center text-sm text-white lg:w-fit lg:p-5 lg:px-7 lg:text-xl"
+            >
+              Enregistrer
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="accordion flex flex-col overflow-hidden border-2 border-solid border-blue lg:text-2xl"
+      >
+        <div
+          class="flex items-center justify-between p-5 font-bold lg:p-10"
+          onclick="Accordion(this)"
+        >
+          <h2>Historique des Locations</h2>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 transition-all duration-700 lg:h-12 lg:w-12"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </div>
+        <div
+          class="flex max-h-0 flex-col gap-0 transition-all duration-700 lg:flex-row lg:flex-wrap lg:gap-10"
+        >
+          <div class="flex flex-col gap-2 lg:w-2/5">
+            <h3>Nom</h3>
+            <p class="select-all border-[1px] border-solid border-blue p-3">
+              TestNom
+            </p>
+          </div>
+          <div class="flex flex-col gap-2 lg:w-2/5">
+            <h3>Prénom</h3>
+            <p class="select-all border-[1px] border-solid border-blue p-3">
+              TestPrénom
+            </p>
+          </div>
+          <div class="flex flex-col gap-2 lg:w-2/5">
+            <h3>Adresse e-mail</h3>
+            <p class="select-all border-[1px] border-solid border-blue p-3">
+              TestAdresseEmail
+            </p>
+          </div>
+          <div class="flex flex-col gap-2 lg:w-2/5">
+            <h3>Numéro de téléphone</h3>
+            <p class="select-all border-[1px] border-solid border-blue p-3">
+              TestTel
+            </p>
+          </div>
+          <form class="my-2 flex items-center justify-between lg:gap-10">
+            <div
+              class="h-14 w-14 shrink-0 overflow-hidden rounded-full lg:h-20 lg:w-20"
+            >
+              <img
+                class="profilactuel h-full object-cover"
+                src="./img/photoaccueil.jpg"
+                alt=""
+              />
+            </div>
+            <label
+              class="rounded-full border-2 border-blue p-2 text-center text-sm lg:text-xl"
+              for="photoprofil"
+              >Sélectionner une image</label
+            >
+            <input
+              onchange="ChangePhotoProfil()"
+              class="nouveauprofil hidden"
+              type="file"
+              name="photoprofil"
+              id="photoprofil"
+            />
+          </form>
+          <div class="flex w-full items-center justify-center">
+            <button
+              class="w-2/3 rounded-lg bg-blue p-3 text-center text-sm text-white lg:w-fit lg:p-5 lg:px-7 lg:text-xl"
+            >
+              Enregistrer
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="accordion flex flex-col overflow-hidden border-2 border-solid border-blue lg:text-2xl"
+      >
+        <div
+          class="flex items-center justify-between p-5 font-bold lg:p-10"
+          onclick="Accordion(this)"
+        >
+          <h2>Mes Alertes</h2>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6 transition-all duration-700 lg:h-12 lg:w-12"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </div>
+        <div
+          class="flex max-h-0 flex-col gap-0 transition-all duration-700 lg:flex-row lg:flex-wrap lg:gap-10"
+        >
+          <div class="flex flex-col gap-2 lg:w-2/5">
+            <h3>Nom</h3>
+            <p class="select-all border-[1px] border-solid border-blue p-3">
+              TestNom
+            </p>
+          </div>
+          <div class="flex flex-col gap-2 lg:w-2/5">
+            <h3>Prénom</h3>
+            <p class="select-all border-[1px] border-solid border-blue p-3">
+              TestPrénom
+            </p>
+          </div>
+          <div class="flex flex-col gap-2 lg:w-2/5">
+            <h3>Adresse e-mail</h3>
+            <p class="select-all border-[1px] border-solid border-blue p-3">
+              TestAdresseEmail
+            </p>
+          </div>
+          <div class="flex flex-col gap-2 lg:w-2/5">
+            <h3>Numéro de téléphone</h3>
+            <p class="select-all border-[1px] border-solid border-blue p-3">
+              TestTel
+            </p>
+          </div>
+          <form class="my-2 flex items-center justify-between lg:gap-10">
+            <div
+              class="h-14 w-14 shrink-0 overflow-hidden rounded-full lg:h-20 lg:w-20"
+            >
+              <img
+                class="profilactuel h-full object-cover"
+                src="./img/photoaccueil.jpg"
+                alt=""
+              />
+            </div>
+            <label
+              class="rounded-full border-2 border-blue p-2 text-center text-sm lg:text-xl"
+              for="photoprofil"
+              >Sélectionner une image</label
+            >
+            <input
+              onchange="ChangePhotoProfil()"
+              class="nouveauprofil hidden"
+              type="file"
+              name="photoprofil"
+              id="photoprofil"
+            />
+          </form>
+          <div class="flex w-full items-center justify-center">
+            <button
+              class="w-2/3 rounded-lg bg-blue p-3 text-center text-sm text-white lg:w-fit lg:p-5 lg:px-7 lg:text-xl"
+            >
+              Enregistrer
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="w-full">
+      <section
+        class="flex flex-col justify-center divide-y-2 bg-blue px-10 text-base text-white lg:h-[25vh] lg:flex-row lg:divide-y-0 lg:divide-x-2 lg:p-10 lg:text-xl"
+      >
+        <div
+          class="sm lg:text-xl:items-center flex flex-col justify-between gap-5 p-8 lg:w-1/4 lg:items-start lg:p-0"
+        >
+          <div class="flex items-center gap-5 sm:w-1/2 lg:w-auto">
+            <i class="fa-solid fa-phone h-7"></i>
+            <p>06 80 70 67 28</p>
+          </div>
+          <div
+            class="flex items-center gap-5 sm:w-1/2 lg:w-auto lg:justify-center"
+          >
+            <i class="fa-solid fa-location-dot h-7"></i>
+            <p>Les Houguettes, 50340 Siouville-Hague</p>
+          </div>
+          <div
+            class="flex items-center gap-5 sm:w-1/2 lg:w-auto lg:justify-center"
+          >
+            <i class="fa-solid fa-envelope h-7"></i>
+            <p>leshouguettes@gmail.com</p>
+          </div>
+        </div>
+        <div
+          class="flex flex-col items-center justify-between gap-2 p-8 text-center lg:w-1/4 lg:p-0"
+        >
+          <h2><a href=""> Nos locations</a></h2>
+          <h2><a href=""> Préparez votre séjour</a></h2>
+          <h2><a href=""> Mon Compte</a></h2>
+          <h2><a href=""> Contact</a></h2>
+        </div>
+        <div
+          class="flex flex-col items-center gap-12 p-8 text-center font-bold lg:w-1/4 lg:justify-between lg:p-0"
+        >
+          <h2>Suivez-nous :</h2>
+          <div class="flex h-8 gap-10 lg:h-1/3">
+            <i class="fa-brands fa-facebook-f h-full"></i>
+            <img
+              class="h-full"
+              src="./img/tripadvisor.svg"
+              alt="Icone de tripadvisor"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="flex justify-center divide-x-2 divide-blue p-5 text-blue">
+        <h1 class="px-5 text-center text-xs font-bold lg:text-xl">
+          <a href=""> Mentions Légales </a>
+        </h1>
+        <h1 class="px-5 text-center text-xs font-bold lg:text-xl">
+          <a href="">Conditions générales</a>
+        </h1>
+        <h1 class="px-5 text-center text-xs font-bold lg:text-xl">
+          <a href="">Conditions générales de vente</a>
+        </h1>
+      </section>
+    </footer>
+
+    <script src="./src/script.js"></script>
+  </body>
+</html>

@@ -5,7 +5,8 @@ module.exports = {
     './single-locations.html',
     './page-sejour.html',
     './page-contact.html',
-    './page-connexion.html',],
+    './page-connexion.html',
+    './page-compte.html',],
   theme: {
     extend: {
       colors: {

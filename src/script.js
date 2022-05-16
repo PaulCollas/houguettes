@@ -79,6 +79,7 @@ if (allDots.length != 0) {
 
 let countcaroussel = 0;
 function Carrousel(direction, carrouselId, number) {
+    console.log(countcaroussel);
     let tableauimage = document.querySelectorAll("#" + carrouselId + "> .imgcarousselchildren");
     let nombre = 0;
     if (number != 1) {
@@ -115,8 +116,7 @@ function Carrousel(direction, carrouselId, number) {
 
     } else if (direction === "right") {
         if (window.matchMedia("(min-width: 500px)").matches) {
-            countcaroussel += 1;
-            console.log(nombre);
+                countcaroussel += 1;
 
             if (countcaroussel >= tableauimage.length - (nombre - 1)) {
                 countcaroussel = 0;
@@ -313,4 +313,19 @@ function ReadMoreText(item) {
     } else {
         item.innerHTML = "En voir plus ...";
     }
+}
+
+
+function Accordion(item) {
+    item.parentNode.querySelector('div:nth-child(2)').classList.toggle('max-h-0');
+    item.parentNode.querySelector('div:nth-child(2)').classList.toggle('max-h-[100rem]');
+    item.parentNode.querySelector('div:nth-child(2)').classList.toggle('p-5');
+    item.parentNode.querySelector('div:nth-child(2)').classList.toggle('lg:px-10');
+    item.parentNode.querySelector('div:nth-child(2)').classList.toggle('gap-0');
+    item.parentNode.querySelector('div:nth-child(2)').classList.toggle('gap-3');
+    item.querySelector('.accordion > div:nth-child(1) > svg').classList.toggle('rotate-180');
+}
+
+function ChangePhotoProfil() {
+    item.querySelector('.profilactuel').src = URL.createObjectURL(event.target.files[0]);
 }
