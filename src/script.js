@@ -116,7 +116,7 @@ function Carrousel(direction, carrouselId, number) {
 
     } else if (direction === "right") {
         if (window.matchMedia("(min-width: 500px)").matches) {
-                countcaroussel += 1;
+            countcaroussel += 1;
 
             if (countcaroussel >= tableauimage.length - (nombre - 1)) {
                 countcaroussel = 0;
@@ -290,8 +290,7 @@ function ChangeText(item) {
         item.innerHTML = "En voir plus ...";
     }
     item.previousElementSibling.classList.toggle('line-clamp-3');
-
-
+    item.previousElementSibling.classList.toggle('lg:line-clamp-5');
 }
 
 /* MAPS API */

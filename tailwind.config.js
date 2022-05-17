@@ -6,7 +6,8 @@ module.exports = {
     './page-sejour.html',
     './page-contact.html',
     './page-connexion.html',
-    './page-compte.html',],
+    './page-compte.html',
+    './single-activitees.html',],
   theme: {
     extend: {
       colors: {
@@ -21,3 +22,5 @@ module.exports = {
   },
   plugins: [require('@tailwindcss/line-clamp'),],
 }
+
+

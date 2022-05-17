@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./dist/output.css" rel="stylesheet" />
+    <script
+      src="https://kit.fontawesome.com/c42ff2c019.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList"></script>
+    <title>Document</title>
+  </head>
+
+  <body>
+    <nav
+      class="sticky top-0 z-50 flex h-[8vh] flex-row-reverse items-center justify-around bg-white font-Acumin text-lg font-bold text-blue shadow-lg lg:h-[12vh] lg:flex-row lg:px-24 lg:text-xl"
+    >
+      <a href="index.html" class="flex h-4/5 w-1/3 lg:w-auto">
+        <img
+          class="w-full object-contain"
+          src="./img/auxquatrevents1.png"
+          alt="Icone de navigation représentant une maison"
+        />
+      </a>
+      <div
+        id="burger"
+        class="flex h-full w-8 flex-col items-end justify-center gap-[0.35rem] lg:hidden"
+      >
+        <span class="h-[3px] w-full rounded-full bg-blue"></span>
+        <span class="h-[3px] w-full rounded-full bg-blue"></span>
+        <span class="h-[3px] w-full rounded-full bg-blue"></span>
+      </div>
+      <ul class="hidden gap-32 lg:flex">
+        <li><a href="./page-locations.html"> Les locations</a></li>
+        <li><a href=""> Préparez votre séjour</a></li>
+      </ul>
+      <ul class="hidden h-1/4 items-center gap-6 lg:flex">
+        <li class="h-full">
+          <a href=""><i class="fa-solid fa-user h-full"></i></a>
+        </li>
+        <li class="h-full">
+          <a href=""><i class="fa-solid fa-envelope h-full"></i></a>
+        </li>
+        <li><button class="bg-blue py-3 px-5 text-white">Réserver</button></li>
+      </ul>
+      <ul
+        id="menuBurger"
+        class="invisible absolute top-full flex max-h-0 w-full flex-col gap-3 overflow-hidden bg-blue text-center font-medium text-white transition-all duration-700"
+      >
+        <li><a href="./index.html">Accueil</a></li>
+        <li><a href="./page-locations.html">Nos Locations</a></li>
+        <li><a href="./page-sejour.html">Préparez votre séjour</a></li>
+        <li><a href="">Mon Compte</a></li>
+        <li><a href="">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main class="">
+      <button
+        onclick="history.back()"
+        class="flex items-center gap-2 p-10 font-bold text-blue lg:text-xl"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="#163E4B"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M11 17l-5-5m0 0l5-5m-5 5h12"
+          />
+        </svg>
+        Retour
+      </button>
+      <h1 class="p-10 pt-0 font-Tahu text-4xl text-blue lg:text-5xl">
+        Zoo de Jurques
+      </h1>
+      <div class="justify-between lg:flex lg:flex-wrap">
+        <section class="flex flex-col gap-10 px-10 pb-10 lg:w-1/2 lg:gap-5">
+          <div
+            class="relative w-full after:block after:pb-[100%] lg:after:pb-[50%]"
+          >
+            <img
+              id="imagePresentation"
+              class="absolute top-0 bottom-0 right-0 left-0 h-full w-full object-cover object-center"
+              src="./img/photoaccueil.jpg"
+              alt=""
+            />
+          </div>
+
+          <div class="flex flex-wrap gap-2 lg:gap-5">
+            <div class="relative flex-1 after:block after:pb-[100%]">
+              <img
+                onclick="SingleLocateShowImage(this)"
+                src="./img/photoaccueil.jpg"
+                alt="images"
+                class="imgLocationSingle absolute top-0 bottom-0 left-0 right-0 h-full w-full border-2 border-solid border-blue object-cover object-center"
+              />
+            </div>
+            <div class="relative flex-1 after:block after:pb-[100%]">
+              <img
+                onclick="SingleLocateShowImage(this)"
+                src="./img/photo2.jpg"
+                alt="images"
+                class="imgLocationSingle absolute top-0 bottom-0 left-0 right-0 h-full w-full object-cover object-center"
+              />
+            </div>
+            <div class="relative flex-1 after:block after:pb-[100%]">
+              <img
+                onclick="SingleLocateShowImage(this)"
+                src="./img/photo3.jpg"
+                alt="images"
+                class="imgLocationSingle absolute top-0 bottom-0 left-0 right-0 h-full w-full object-cover object-center"
+              />
+            </div>
+            <div class="relative flex-1 after:block after:pb-[100%]">
+              <img
+                onclick="SingleLocateShowImage(this)"
+                src="./img/photoaccueil.jpg"
+                alt="images"
+                class="imgLocationSingle absolute top-0 bottom-0 left-0 right-0 h-full w-full object-cover object-center"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section class="flex flex-col px-10 text-blue lg:w-1/2">
+          <div
+            class="border-b-2 border-b-blue py-5 lg:flex lg:flex-col lg:gap-3 lg:pt-0"
+          >
+            <h1 class="text-xl lg:text-4xl">Description</h1>
+            <div class="flex gap-2 lg:gap-3 lg:text-2xl">
+              <p>4 personnes</p>
+              <span>·</span>
+              <p>2 chambres</p>
+            </div>
+          </div>
+          <div class="lg:flex lg:h-full lg:py-10">
+            <div
+              class="flex basis-1/2 flex-col gap-2 py-5 text-sm lg:h-full lg:gap-5 lg:py-0 lg:text-xl"
+            >
+              <p class="m-auto line-clamp-3 lg:m-0 lg:line-clamp-5">
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                aliquyam erat, sed diam voluptua. Libero fuga facilis vel
+                consectetur quos sapiente deleniti eveniet dolores tempore eos
+                deserunt officia quis ab? Excepturi vero tempore minus beatae
+                voluptatem! Lorem ipsum dolor sit amet, consetetur sadipscing
+                elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+                dolore magna aliquyam erat, sed diam voluptua. Libero fuga
+                facilis vel consectetur quos sapiente deleniti eveniet dolores
+                tempore eos deserunt officia quis ab? Excepturi vero tempore
+                minus beatae voluptatem!
+              </p>
+
+              <button
+                onclick="ChangeText(this)"
+                class="w-fit cursor-pointer font-bold text-black"
+              >
+                En voir plus ...
+              </button>
+            </div>
+            <div
+              id="map"
+              class="map float-right aspect-square w-full shadow-[0_0px_10px_0_rgba(0,0,0,0.3)] lg:aspect-auto lg:h-full lg:w-1/2"
+            ></div>
+          </div>
+        </section>
+      </div>
+
+      <section
+        id="AvisSection"
+        class="relative flex flex-col gap-10 py-10 transition-all duration-1000 lg:gap-0"
+      >
+        <div
+          class="hidden h-[30vh] w-full items-center justify-around bg-blue text-white lg:flex"
+        >
+          <h1 class="text-3xl">+ de 300 avis</h1>
+          <div class="text-center">
+            <h1 class="text-4xl font-bold">4.8/5</h1>
+            <div class="flex h-10 gap-1 text-yellow-400">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-full w-fit"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-full w-fit"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-full w-fit"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-full w-fit"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-full w-fit"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                />
+              </svg>
+            </div>
+          </div>
+          <h1 class="text-3xl">Superhôte</h1>
+        </div>
+        <div
+          class="avisClient flex flex-col gap-3 p-6 shadow-[0_0px_10px_0_rgba(0,0,0,0.3)] transition-all lg:flex-row lg:gap-10 lg:border-b-2 lg:shadow-none"
+        >
+          <div class="flex w-full gap-3 lg:w-1/4">
+            <div class="h-12 w-12 overflow-hidden rounded-full lg:h-20 lg:w-20">
+              <img
+                class="h-full object-cover"
+                src="./img/photoaccueil.jpg"
+                alt=""
+              />
+            </div>
+            <div>
+              <h2 class="text-sm font-bold lg:text-xl">Jêrome K.</h2>
+              <div class="flex gap-1 text-yellow-200 lg:h-8">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 lg:h-full lg:w-fit"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 lg:h-full lg:w-fit"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 lg:h-full lg:w-fit"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 lg:h-full lg:w-fit"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 lg:h-full lg:w-fit"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="w-full">
+            <p
+              class="m-auto w-full text-center text-sm transition-all line-clamp-2 lg:w-full lg:text-xl"
+            >
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+              erat, sed diam voluptua. At vero eos et accusam et justo duo
+              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+              sanctus est Lorem ipsum dolor sit amet
+            </p>
+            <button
+              onclick="ReadMoreText(this)"
+              class="my-2 w-full text-right italic"
+            >
+              Voir plus
+            </button>
+          </div>
+          <div class="hidden items-center justify-center lg:flex">
+            <i class="fa-solid fa-quote-right h-full w-1/4"></i>
+          </div>
+        </div>
+        <div
+          class="avisClient flex flex-col gap-3 p-6 shadow-[0_0px_10px_0_rgba(0,0,0,0.3)] transition-all lg:flex-row lg:border-b-2 lg:shadow-none"
+        >
+          <div class="flex w-full gap-3 lg:w-1/4">
+            <div class="h-12 w-12 overflow-hidden rounded-full lg:h-20 lg:w-20">
+              <img
+                class="h-full object-cover"
+                src="./img/photoaccueil.jpg"
+                alt=""
+              />
+            </div>
+            <div>
+              <h2 class="text-sm font-bold lg:text-xl">Jêrome K.</h2>
+              <div class="flex gap-1 text-yellow-200 lg:h-8">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 lg:h-full lg:w-fit"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 lg:h-full lg:w-fit"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 lg:h-full lg:w-fit"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 lg:h-full lg:w-fit"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 lg:h-full lg:w-fit"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="w-full">
+            <p
+              class="m-auto w-full text-center text-sm transition-all line-clamp-2 lg:w-full lg:text-xl"
+            >
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+              erat, sed diam voluptua. At vero eos et accusam et justo duo
+              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+              sanctus est Lorem ipsum dolor sit amet
+            </p>
+            <button
+              onclick="ReadMoreText(this)"
+              class="my-2 w-full text-right italic"
+            >
+              Voir plus
+            </button>
+          </div>
+          <div class="hidden items-center justify-center lg:flex">
+            <i class="fa-solid fa-quote-right h-full w-1/4"></i>
+          </div>
+        </div>
+        <div
+          class="avisClient flex flex-col gap-3 overflow-hidden p-6 shadow-[0_0px_10px_0_rgba(0,0,0,0.3)] transition-all duration-700 lg:max-h-0 lg:flex-row lg:p-0 lg:shadow-none"
+        >
+          <div class="flex w-full gap-3 lg:w-1/4">
+            <div class="h-12 w-12 overflow-hidden rounded-full lg:h-20 lg:w-20">
+              <img
+                class="h-full object-cover"
+                src="./img/photoaccueil.jpg"
+                alt=""
+              />
+            </div>
+            <div>
+              <h2 class="text-sm font-bold lg:text-xl">Jêrome K.</h2>
+              <div class="flex gap-1 text-yellow-200 lg:h-8">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 lg:h-full lg:w-fit"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 lg:h-full lg:w-fit"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 lg:h-full lg:w-fit"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 lg:h-full lg:w-fit"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 lg:h-full lg:w-fit"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="w-full">
+            <p
+              class="m-auto w-full text-center text-sm transition-all line-clamp-2 lg:w-full lg:text-xl"
+            >
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+              erat, sed diam voluptua. At vero eos et accusam et justo duo
+              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+              sanctus est Lorem ipsum dolor sit amet
+            </p>
+            <button
+              onclick="ReadMoreText(this)"
+              class="my-2 w-full text-right italic"
+            >
+              Voir plus
+            </button>
+          </div>
+          <div class="hidden items-center justify-center lg:flex">
+            <i class="fa-solid fa-quote-right h-full w-1/4"></i>
+          </div>
+        </div>
+        <div
+          class="avisClient flex flex-col gap-3 overflow-hidden p-6 shadow-[0_0px_10px_0_rgba(0,0,0,0.3)] transition-all duration-700 lg:max-h-0 lg:flex-row lg:p-0 lg:shadow-none"
+        >
+          <div class="flex w-full gap-3 lg:w-1/4">
+            <div class="h-12 w-12 overflow-hidden rounded-full lg:h-20 lg:w-20">
+              <img
+                class="h-full object-cover"
+                src="./img/photoaccueil.jpg"
+                alt=""
+              />
+            </div>
+            <div>
+              <h2 class="text-sm font-bold lg:text-xl">Jêrome K.</h2>
+              <div class="flex gap-1 text-yellow-200 lg:h-8">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 lg:h-full lg:w-fit"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 lg:h-full lg:w-fit"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 lg:h-full lg:w-fit"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 lg:h-full lg:w-fit"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 lg:h-full lg:w-fit"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="w-full">
+            <p
+              class="m-auto w-full text-center text-sm transition-all line-clamp-2 lg:w-full lg:text-xl"
+            >
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+              erat, sed diam voluptua. At vero eos et accusam et justo duo
+              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+              sanctus est Lorem ipsum dolor sit amet
+            </p>
+            <button
+              onclick="ReadMoreText(this)"
+              class="my-2 w-full text-right italic"
+            >
+              Voir plus
+            </button>
+          </div>
+          <div class="hidden items-center justify-center lg:flex">
+            <i class="fa-solid fa-quote-right h-full w-1/4"></i>
+          </div>
+        </div>
+        <div
+          class="avisClient flex flex-col gap-3 overflow-hidden p-6 shadow-[0_0px_10px_0_rgba(0,0,0,0.3)] transition-all duration-700 lg:max-h-0 lg:flex-row lg:p-0 lg:shadow-none"
+        >
+          <div class="flex w-full gap-3 lg:w-1/4">
+            <div class="h-12 w-12 overflow-hidden rounded-full lg:h-20 lg:w-20">
+              <img
+                class="h-full object-cover"
+                src="./img/photoaccueil.jpg"
+                alt=""
+              />
+            </div>
+            <div>
+              <h2 class="text-sm font-bold lg:text-xl">Jêrome K.</h2>
+              <div class="flex gap-1 text-yellow-200 lg:h-8">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 lg:h-full lg:w-fit"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 lg:h-full lg:w-fit"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 lg:h-full lg:w-fit"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 lg:h-full lg:w-fit"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 lg:h-full lg:w-fit"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div class="w-full">
+            <p
+              class="m-auto w-full text-center text-sm transition-all line-clamp-2 lg:w-full lg:text-xl"
+            >
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+              erat, sed diam voluptua. At vero eos et accusam et justo duo
+              dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+              sanctus est Lorem ipsum dolor sit amet
+            </p>
+            <button
+              onclick="ReadMoreText(this)"
+              class="my-2 w-full text-right italic"
+            >
+              Voir plus
+            </button>
+          </div>
+          <div class="hidden items-center justify-center lg:flex">
+            <i class="fa-solid fa-quote-right h-full w-1/4"></i>
+          </div>
+        </div>
+        <button id="voirplusavis" class="hidden p-5 lg:block">
+          En voir plus
+        </button>
+      </section>
+    </main>
+
+    <footer class="w-full">
+      <section
+        class="flex flex-col justify-center divide-y-2 bg-blue px-10 text-base text-white lg:h-[25vh] lg:flex-row lg:divide-y-0 lg:divide-x-2 lg:p-10 lg:text-xl"
+      >
+        <div
+          class="flex flex-col justify-between gap-5 p-8 sm:items-center lg:w-1/4 lg:items-start lg:p-0"
+        >
+          <div class="flex items-center gap-5 sm:w-1/2 lg:w-auto">
+            <i class="fa-solid fa-phone h-7"></i>
+            <p>06 80 70 67 28</p>
+          </div>
+          <div
+            class="flex items-center gap-5 sm:w-1/2 lg:w-auto lg:justify-center"
+          >
+            <i class="fa-solid fa-location-dot h-7"></i>
+            <p>Les Houguettes, 50340 Siouville-Hague</p>
+          </div>
+          <div
+            class="flex items-center gap-5 sm:w-1/2 lg:w-auto lg:justify-center"
+          >
+            <i class="fa-solid fa-envelope h-7"></i>
+            <p>leshouguettes@gmail.com</p>
+          </div>
+        </div>
+        <div
+          class="flex flex-col items-center justify-between gap-2 p-8 text-center lg:w-1/4 lg:p-0"
+        >
+          <h2>Nos locations</h2>
+          <h2>Préparez votre séjour</h2>
+          <h2>Mon Compte</h2>
+          <h2>Contact</h2>
+        </div>
+        <div
+          class="flex flex-col items-center gap-12 p-8 text-center font-bold lg:w-1/4 lg:justify-between lg:p-0"
+        >
+          <h2>Suivez-nous :</h2>
+          <div class="flex h-8 gap-10 lg:h-1/3">
+            <i class="fa-brands fa-facebook-f h-full"></i>
+            <img
+              class="h-full"
+              src="./img/tripadvisor.svg"
+              alt="Icone de tripadvisor"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="flex justify-center divide-x-2 divide-blue p-5 text-blue">
+        <h1 class="px-5 text-center text-xs font-bold lg:text-xl">
+          Mentions Légales
+        </h1>
+        <h1 class="px-5 text-center text-xs font-bold lg:text-xl">
+          Conditions générales
+        </h1>
+        <h1 class="px-5 text-center text-xs font-bold lg:text-xl">
+          Conditions générales de vente
+        </h1>
+      </section>
+    </footer>
+
+    <script src="./src/script.js"></script>
+  </body>
+</html>
