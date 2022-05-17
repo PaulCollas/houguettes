@@ -240,20 +240,22 @@ if (avisClients.length != 0) {
 
     AvisButton.addEventListener('click', function () {
         avisClients3.forEach(element => {
-            element.classList.toggle('lg:border-b-2');
+            element.classList.toggle('border-t-2');
         });
         avisClients2.forEach(element => {
-            element.classList.toggle('lg:p-0');
-            element.classList.toggle('lg:max-h-0');
-            element.classList.toggle('lg:max-h-96');
+            element.classList.toggle('p-0');
+            element.classList.toggle('p-6');
+            element.classList.toggle('max-h-0');
+            element.classList.toggle('max-h-96');
         });
         avisClients.forEach(element => {
-            element.classList.toggle('lg:shadow-none');
+            element.classList.toggle('shadow-[0_0px_10px_0_rgba(0,0,0,0.3)]');
             element.classList.toggle('lg:p-10');
 
         });
+        AvisSection.classList.toggle('gap-10');
         AvisSection.classList.toggle('lg:gap-0');
-
+        AvisButton.classList.toggle('border-t-2');
         countAvis++;
         if (countAvis % 2 === 1) {
 
