@@ -339,5 +339,5 @@ function Accordion(item) {
 }
 
 function ChangePhotoProfil() {
-    item.querySelector('.profilactuel').src = URL.createObjectURL(event.target.files[0]);
+    document.querySelector('.profilactuel').src = URL.createObjectURL(event.target.files[0]);
 }
