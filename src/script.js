@@ -79,6 +79,7 @@ if (allDots.length != 0) {
 
 let countcaroussel = 0;
 function Carrousel(direction, carrouselId, number) {
+
     console.log(countcaroussel);
     let tableauimage = document.querySelectorAll("#" + carrouselId + "> .imgcarousselchildren");
     let nombre = 0;
@@ -149,7 +150,7 @@ function Carrousel(direction, carrouselId, number) {
 let fleche = document.querySelector('.fleche>a');
 if (fleche) {
     if (fleche.href === window.location.href || fleche.href === window.location.href + "#") {
-        fleche.href = "#" + $('section')[1].id;
+        fleche.href = "#" + document.querySelectorAll('section')[1].id;
     }
 }
 
@@ -228,8 +229,8 @@ if (fleche) {
 /* AVIS CLIENTS */
 
 let avisClients = document.querySelectorAll('.avisClient');
-let avisClients2 = document.querySelectorAll('.avisClient:nth-child(n+4)');
-let avisClients3 = document.querySelectorAll('.avisClient:nth-child(-n+3)');
+let avisClients2 = document.querySelectorAll('.avisClient:nth-child(n+5)');
+let avisClients3 = document.querySelectorAll('.avisClient:nth-child(-n+4)');
 let AvisButton = document.querySelector('#voirplusavis')
 let AvisSection = document.querySelector('#AvisSection')
 let countAvis = 0;
@@ -243,6 +244,7 @@ if (avisClients.length != 0) {
             element.classList.toggle('border-t-2');
         });
         avisClients2.forEach(element => {
+            element.classList.toggle('bg-red-500');
             element.classList.toggle('p-0');
             element.classList.toggle('p-6');
             element.classList.toggle('max-h-0');
