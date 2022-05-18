@@ -76,11 +76,22 @@ if (allDots.length != 0) {
 -------------------------------*/
 
 
-
 let countcaroussel = 0;
-function Carrousel(direction, carrouselId, number) {
+let count2 = 0
+let test;
 
-    console.log(countcaroussel);
+function Carrousel(direction, carrouselId, number) {
+    count2++;
+
+    if (count2 == 1) {
+        test = carrouselId;
+    }
+
+    if (test != carrouselId) {
+        countcaroussel = 0;
+        test = carrouselId;
+    }
+
     let tableauimage = document.querySelectorAll("#" + carrouselId + "> .imgcarousselchildren");
     let nombre = 0;
     if (number != 1) {
@@ -92,7 +103,6 @@ function Carrousel(direction, carrouselId, number) {
 
         if (window.matchMedia("(min-width: 500px)").matches) {
             countcaroussel -= 1;
-            console.log(nombre);
             if (countcaroussel < 0) {
                 countcaroussel = tableauimage.length - (nombre);
             }
