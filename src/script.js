@@ -244,7 +244,6 @@ if (avisClients.length != 0) {
             element.classList.toggle('border-t-2');
         });
         avisClients2.forEach(element => {
-            element.classList.toggle('bg-red-500');
             element.classList.toggle('p-0');
             element.classList.toggle('p-6');
             element.classList.toggle('max-h-0');
