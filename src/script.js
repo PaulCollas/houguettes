@@ -164,78 +164,6 @@ if (fleche) {
     }
 }
 
-/* caroussel logo
--------------------------------*/
-
-// var countcaroussel2 = 0;
-// let tableauimage2 = document.querySelectorAll(".imgcarousselchildren2");
-// const before2 = document.querySelector(".before2");
-// const after2 = document.querySelector(".after2");
-// console.log(before2);
-
-
-// console.log(after2);
-// before2.addEventListener("click", function () {
-//     console.log('Yessir');
-//     if (window.matchMedia("(min-width: 500px)").matches) {
-//         countcaroussel2 -= 1;
-
-//         if (countcaroussel2 < 0) {
-//             countcaroussel2 = tableauimage2.length - 4;
-//         }
-//         for (let i = 0; i < tableauimage2.length; i++) {
-//             const element = tableauimage2[i];
-//             element.style.transform =
-//                 "translateX(-" + 100 * countcaroussel2 + "%)";
-//         }
-//     } else {
-//         countcaroussel2 -= 1;
-
-//         if (countcaroussel2 < 0) {
-//             countcaroussel2 = tableauimage2.length - 1;
-//         }
-//         for (let i = 0; i < tableauimage2.length; i++) {
-//             const element = tableauimage2[i];
-//             element.style.transform =
-//                 "translateX(-" + 100 * countcaroussel2 + "%)";
-
-//         }
-//     }
-// });
-// after2.addEventListener("click", function () {
-//     console.log('Yessir');
-
-//     if (window.matchMedia("(min-width: 500px)").matches) {
-
-//         countcaroussel2 += 1;
-//         if (countcaroussel2 >= tableauimage2.length - 3) {
-//             countcaroussel2 = 0;
-//         }
-//         for (let i = 0; i < tableauimage2.length; i++) {
-//             const element = tableauimage2[i];
-//             element.style.transform = "translateX(-" + 100 * countcaroussel2 + "%)";
-//         }
-//     } else {
-//         countcaroussel2 += 1;
-//         if (countcaroussel2 >= tableauimage2.length) {
-//             countcaroussel2 = 0;
-//         }
-//         for (let i = 0; i < tableauimage2.length; i++) {
-//             const element = tableauimage2[i];
-//             element.style.transform = "translateX(-" + 100 * countcaroussel2 + "%)";
-//         }
-//     }
-// });
-
-
-// let fleche2 = document.querySelector('.fleche2>a');
-// if (fleche2) {
-//     if (fleche2.href === window.location.href || fleche2.href === window.location.href + "#") {
-//         fleche2.href = "#" + $('section')[1].id;
-//     }
-// }
-
-
 /* AVIS CLIENTS */
 
 let avisClients = document.querySelectorAll('.avisClient');
@@ -341,3 +269,41 @@ function Accordion(item) {
 function ChangePhotoProfil() {
     document.querySelector('.profilactuel').src = URL.createObjectURL(event.target.files[0]);
 }
+
+// function AgrandirImage(item) {
+//     item.classList.toggle('absolute');
+//     item.classList.toggle('h-screen');
+//     item.classList.toggle('w-screen');
+//     item.classList.toggle('top-0');
+//     item.classList.toggle('left-0');
+//     item.classList.toggle('rounded-full');
+//     item.classList.toggle('flex');
+//     item.classList.toggle('justify-center');
+//     item.classList.toggle('items-center');
+//     item.classList.toggle('bg-slate-700');
+//     item.classList.toggle('z-50');
+//     item.children[0].classList.toggle('h-full')
+
+
+
+// }
+
+
+// function preventScroll(e) {
+//     e.preventDefault();
+//     e.stopPropagation();
+
+//     return false;
+// }
+
+// function disable() {
+//     if (!document.querySelector('#noScroll img').classList.contains('z-50')) {
+//         document.querySelector('html').removeEventListener('wheel', preventScroll, { passive: false });
+//     }
+//     document.querySelector('html').addEventListener('wheel', preventScroll, { passive: false });
+// }
+
+// function enable() {
+// }
+
+// document.querySelector('#noScroll').addEventListener('click', disable);

@@ -7,7 +7,7 @@ module.exports = {
     './page-contact.html',
     './page-connexion.html',
     './page-compte.html',
-    './single-activitees.html',],
+    './single-activites.html',],
   theme: {
     extend: {
       colors: {
@@ -15,7 +15,7 @@ module.exports = {
       },
       fontFamily: {
         'Acumin': ["Acumin Variable Concept"],
-        'Tahu': ["Tahu"],
+        'Tahu': ["rooney-web, serif"],
         'Roboto': ["'Space Mono', monospace"],
       }
     },

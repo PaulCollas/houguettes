@@ -9,6 +9,7 @@
       src="https://kit.fontawesome.com/c42ff2c019.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="https://use.typekit.net/ahm0xcv.css" />
     <link
       rel="icon"
       type="image/x-icon"
@@ -38,14 +39,18 @@
       </div>
       <ul class="hidden gap-32 lg:flex">
         <li><a href="./page-locations.html"> Les locations</a></li>
-        <li><a href=""> Préparez votre séjour</a></li>
+        <li><a href="./page-sejour.html"> Préparez votre séjour</a></li>
       </ul>
       <ul class="hidden h-1/4 items-center gap-6 lg:flex">
         <li class="h-full">
-          <a href=""><i class="fa-solid fa-user h-full"></i></a>
+          <a href="./page-connexion.html"
+            ><i class="fa-solid fa-user h-full"></i
+          ></a>
         </li>
         <li class="h-full">
-          <a href=""><i class="fa-solid fa-envelope h-full"></i></a>
+          <a href="./page-contact.html"
+            ><i class="fa-solid fa-envelope h-full"></i
+          ></a>
         </li>
         <li><button class="bg-blue py-3 px-5 text-white">Réserver</button></li>
       </ul>
@@ -53,15 +58,36 @@
         id="menuBurger"
         class="invisible absolute top-full flex max-h-0 w-full flex-col gap-3 overflow-hidden bg-blue text-center font-medium text-white transition-all duration-700"
       >
-        <li><a href="">Accueil</a></li>
-        <li><a href="">Nos Locations</a></li>
-        <li><a href="">Préparez votre séjour</a></li>
-        <li><a href="">Mon Compte</a></li>
-        <li><a href="">Contact</a></li>
+        <li><a href="./index.html">Accueil</a></li>
+        <li><a href="./page-locations.html">Nos Locations</a></li>
+        <li><a href="./page-sejour.html">Préparez votre séjour</a></li>
+        <li><a href="./page-connexion.html">Mon Compte</a></li>
+        <li><a href="./page-contact.html">Contact</a></li>
       </ul>
     </nav>
 
     <main class="m-10 flex flex-col gap-5 text-blue lg:mx-36 lg:gap-14">
+      <button
+        onclick="history.back()"
+        class="flex items-center gap-2 font-bold text-blue lg:text-xl"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="#163E4B"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M11 17l-5-5m0 0l5-5m-5 5h12"
+          />
+        </svg>
+        Déconnexion
+      </button>
+
       <h1 class="text-3xl font-bold lg:text-5xl">Mon Compte</h1>
       <p class="text-slate-500 lg:text-xl">
         Bienvenue sur votre page personnelle, ici vous pouvez gérer vos
@@ -119,10 +145,12 @@
           </div>
           <form class="my-2 flex items-center justify-between lg:gap-10">
             <div
-              class="h-14 w-14 shrink-0 overflow-hidden rounded-full lg:h-20 lg:w-20"
+              id="noScroll"
+              onclick="AgrandirImage(this)"
+              class="h-14 w-14 shrink-0 cursor-pointer overflow-hidden rounded-full transition-all lg:h-20 lg:w-20"
             >
               <img
-                class="profilactuel h-full object-cover"
+                class="profilactuel aspect-square h-full object-cover"
                 src="./img/photoaccueil.jpg"
                 alt=""
               />
@@ -320,7 +348,7 @@
         class="flex flex-col justify-center divide-y-2 bg-blue px-10 text-base text-white lg:h-[25vh] lg:flex-row lg:divide-y-0 lg:divide-x-2 lg:p-10 lg:text-xl"
       >
         <div
-          class="sm lg:text-xl:items-center flex flex-col justify-between gap-5 p-8 lg:w-1/4 lg:items-start lg:p-0"
+          class="flex flex-col justify-between gap-5 p-8 sm:items-center lg:w-1/4 lg:items-start lg:p-0"
         >
           <div class="flex items-center gap-5 sm:w-1/2 lg:w-auto">
             <i class="fa-solid fa-phone h-7"></i>
@@ -342,34 +370,37 @@
         <div
           class="flex flex-col items-center justify-between gap-2 p-8 text-center lg:w-1/4 lg:p-0"
         >
-          <h2><a href=""> Nos locations</a></h2>
-          <h2><a href=""> Préparez votre séjour</a></h2>
-          <h2><a href=""> Mon Compte</a></h2>
-          <h2><a href=""> Contact</a></h2>
+          <a href="./page-locations.html"><h2>Nos locations</h2></a>
+          <a href="./page-sejour.html"><h2>Préparez votre séjour</h2></a>
+          <a href="./page-connexion.html"><h2>Mon Compte</h2></a>
+          <a href="./page-contact.html"><h2>Contact</h2></a>
         </div>
         <div
           class="flex flex-col items-center gap-12 p-8 text-center font-bold lg:w-1/4 lg:justify-between lg:p-0"
         >
           <h2>Suivez-nous :</h2>
           <div class="flex h-8 gap-10 lg:h-1/3">
-            <i class="fa-brands fa-facebook-f h-full"></i>
-            <img
-              class="h-full"
-              src="./img/tripadvisor.svg"
-              alt="Icone de tripadvisor"
-            />
+            <a class="h-full" href="https://www.facebook.com"
+              ><i class="fa-brands fa-facebook-f h-full"></i
+            ></a>
+            <a class="h-full" href="https://www.tripadvisor.com/"
+              ><img
+                class="h-full"
+                src="./img/tripadvisor.svg"
+                alt="Icone de tripadvisor"
+            /></a>
           </div>
         </div>
       </section>
       <section class="flex justify-center divide-x-2 divide-blue p-5 text-blue">
         <h1 class="px-5 text-center text-xs font-bold lg:text-xl">
-          <a href=""> Mentions Légales </a>
+          Mentions Légales
         </h1>
         <h1 class="px-5 text-center text-xs font-bold lg:text-xl">
-          <a href="">Conditions générales</a>
+          Conditions générales
         </h1>
         <h1 class="px-5 text-center text-xs font-bold lg:text-xl">
-          <a href="">Conditions générales de vente</a>
+          Conditions générales de vente
         </h1>
       </section>
     </footer>
