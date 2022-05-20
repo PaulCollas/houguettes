@@ -7,7 +7,8 @@ module.exports = {
     './page-contact.html',
     './page-connexion.html',
     './page-compte.html',
-    './single-activites.html',],
+    './single-activites.html',
+    './page-apropos.html',],
   theme: {
     extend: {
       colors: {
