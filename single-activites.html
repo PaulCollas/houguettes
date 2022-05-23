@@ -44,19 +44,50 @@
         <span class="h-[3px] w-full rounded-full bg-blue"></span>
         <span class="h-[3px] w-full rounded-full bg-blue"></span>
       </div>
-      <ul class="hidden gap-32 lg:flex">
+      <ul class="hidden gap-32 font-Tahu lg:flex lg:text-2xl">
         <li><a href="./page-locations.html"> Les locations</a></li>
         <li><a href="./page-sejour.html"> Préparez votre séjour</a></li>
+        <li><a href="./page-apropos.html">A propos</a></li>
       </ul>
       <ul class="hidden h-1/4 items-center gap-6 lg:flex">
+        <li class="flex h-full items-center gap-2">
+          <div
+            class="relative flex h-full flex-col items-center gap-2 bg-white"
+          >
+            <img
+              onclick="ChooseLanguage(this)"
+              id="actualLanguage"
+              class="h-full w-12 cursor-pointer object-cover"
+              src="./img/Flag_of_France.svg"
+              alt="Drapeau de la France"
+            />
+            <div
+              class="otherLanguage absolute top-full flex max-h-0 flex-col gap-2 overflow-hidden bg-white transition-all"
+            >
+              <img
+                onclick="ChooseLanguage(this)"
+                class="h-full w-fit cursor-pointer object-cover"
+                src="./img/Flag_of_the_United_Kingdom.svg"
+                alt="Drapeau de la France"
+              />
+              <img
+                onclick="ChooseLanguage(this)"
+                class="h-full w-fit cursor-pointer object-cover"
+                src="./img/Flag_of_Germany.svg"
+                alt="Drapeau de la France"
+              />
+            </div>
+          </div>
+          <em class="fa-solid fa-chevron-down h-1/2"></em>
+        </li>
         <li class="h-full">
           <a href="./page-connexion.html"
-            ><i class="fa-solid fa-user h-full"></i
+            ><em class="fa-solid fa-user h-full"></em
           ></a>
         </li>
         <li class="h-full">
           <a href="./page-contact.html"
-            ><i class="fa-solid fa-envelope h-full"></i
+            ><em class="fa-solid fa-envelope h-full"></em
           ></a>
         </li>
         <li>
@@ -104,12 +135,12 @@
       <h1 class="p-10 pt-0 font-Tahu text-4xl text-blue lg:text-5xl">
         Zoo de Jurques
       </h1>
-      <div class="justify-between lg:flex lg:flex-wrap">
+      <div class="justify-between lg:flex">
         <section
-          class="flex aspect-square flex-col gap-10 px-10 pb-10 lg:w-1/2 lg:gap-5"
+          class="flex aspect-square flex-col gap-10 px-10 pb-10 lg:w-1/3 lg:gap-5"
         >
           <div
-            class="relative w-full after:block after:pb-[100%] lg:after:pb-[50%]"
+            class="relative aspect-square w-full after:block after:pb-[100%] lg:after:pb-[50%]"
           >
             <img
               id="imagePresentation"
@@ -155,7 +186,7 @@
           </div>
         </section>
 
-        <section class="flex flex-col px-10 text-blue lg:w-1/2">
+        <section class="flex flex-col px-10 text-blue lg:w-2/3">
           <div
             class="border-b-2 border-b-blue py-5 lg:flex lg:flex-col lg:gap-3 lg:pt-0"
           >
@@ -166,7 +197,7 @@
               <p>La Butte Jurques, 14260 Dialan sur Chaîne</p>
             </div>
           </div>
-          <div class="lg:flex lg:h-full lg:py-10">
+          <div class="lg:flex lg:h-full lg:flex-col lg:gap-4 lg:py-10">
             <div
               class="flex basis-1/2 flex-col gap-2 py-5 text-sm lg:h-full lg:gap-5 lg:py-0 lg:pr-5 lg:text-xl"
             >
@@ -178,7 +209,13 @@
                 tigre de Sibérie, panthère des neiges de Mongolie, etc.
                 découvrez les animaux du monde ! Dépaysement garanti parmi les
                 plaines africaines et sud américaines, les montagnes d'Afrique,
-                le territoire australien, le village des reptiles…
+                le territoire australien, le village des reptiles… <br />Tout au
+                long de la saison, des animations ludiques et gratuites
+                ponctuent votre visite : contact avec les serpents, repas des
+                manchots, goûter des singes et des girafes, repas des loups et
+                des lions. Sur place : restaurant "la part du Lion" et boutique,
+                ouverts tous les jours d'ouverture du parc. Snack ouvert en
+                juillet et août, . Prévoyez 2 h de visite au minimum.
               </p>
 
               <button
@@ -190,7 +227,7 @@
             </div>
             <div
               id="map"
-              class="map float-right mb-10 aspect-square w-full shadow-[0_0px_10px_0_rgba(0,0,0,0.3)] lg:mb-0 lg:aspect-auto lg:h-full lg:w-1/2"
+              class="map lg:asp float-right mb-10 aspect-square w-full shadow-[0_0px_10px_0_rgba(0,0,0,0.3)] lg:mb-0 lg:aspect-auto lg:h-full"
             ></div>
           </div>
         </section>

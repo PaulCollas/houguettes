@@ -37,19 +37,50 @@
         <span class="h-[3px] w-full rounded-full bg-blue"></span>
         <span class="h-[3px] w-full rounded-full bg-blue"></span>
       </div>
-      <ul class="hidden gap-32 lg:flex">
+      <ul class="hidden gap-32 font-Tahu lg:flex lg:text-2xl">
         <li><a href="./page-locations.html"> Les locations</a></li>
         <li><a href="./page-sejour.html"> Préparez votre séjour</a></li>
+        <li><a href="./page-apropos.html">A propos</a></li>
       </ul>
       <ul class="hidden h-1/4 items-center gap-6 lg:flex">
+        <li class="flex h-full items-center gap-2">
+          <div
+            class="relative flex h-full flex-col items-center gap-2 bg-white"
+          >
+            <img
+              onclick="ChooseLanguage(this)"
+              id="actualLanguage"
+              class="h-full w-12 cursor-pointer object-cover"
+              src="./img/Flag_of_France.svg"
+              alt="Drapeau de la France"
+            />
+            <div
+              class="otherLanguage absolute top-full flex max-h-0 flex-col gap-2 overflow-hidden bg-white transition-all"
+            >
+              <img
+                onclick="ChooseLanguage(this)"
+                class="h-full w-fit cursor-pointer object-cover"
+                src="./img/Flag_of_the_United_Kingdom.svg"
+                alt="Drapeau de la France"
+              />
+              <img
+                onclick="ChooseLanguage(this)"
+                class="h-full w-fit cursor-pointer object-cover"
+                src="./img/Flag_of_Germany.svg"
+                alt="Drapeau de la France"
+              />
+            </div>
+          </div>
+          <em class="fa-solid fa-chevron-down h-1/2"></em>
+        </li>
         <li class="h-full">
           <a href="./page-connexion.html"
-            ><i class="fa-solid fa-user h-full"></i
+            ><em class="fa-solid fa-user h-full"></em
           ></a>
         </li>
         <li class="h-full">
           <a href="./page-contact.html"
-            ><i class="fa-solid fa-envelope h-full"></i
+            ><em class="fa-solid fa-envelope h-full"></em
           ></a>
         </li>
         <li>

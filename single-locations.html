@@ -43,19 +43,50 @@
         <span class="h-[3px] w-full rounded-full bg-blue"></span>
         <span class="h-[3px] w-full rounded-full bg-blue"></span>
       </div>
-      <ul class="hidden gap-32 lg:flex">
+      <ul class="hidden gap-32 font-Tahu lg:flex lg:text-2xl">
         <li><a href="./page-locations.html"> Les locations</a></li>
         <li><a href="./page-sejour.html"> Préparez votre séjour</a></li>
+        <li><a href="./page-apropos.html">A propos</a></li>
       </ul>
       <ul class="hidden h-1/4 items-center gap-6 lg:flex">
+        <li class="flex h-full items-center gap-2">
+          <div
+            class="relative flex h-full flex-col items-center gap-2 bg-white"
+          >
+            <img
+              onclick="ChooseLanguage(this)"
+              id="actualLanguage"
+              class="h-full w-12 cursor-pointer object-cover"
+              src="./img/Flag_of_France.svg"
+              alt="Drapeau de la France"
+            />
+            <div
+              class="otherLanguage absolute top-full flex max-h-0 flex-col gap-2 overflow-hidden bg-white transition-all"
+            >
+              <img
+                onclick="ChooseLanguage(this)"
+                class="h-full w-fit cursor-pointer object-cover"
+                src="./img/Flag_of_the_United_Kingdom.svg"
+                alt="Drapeau de la France"
+              />
+              <img
+                onclick="ChooseLanguage(this)"
+                class="h-full w-fit cursor-pointer object-cover"
+                src="./img/Flag_of_Germany.svg"
+                alt="Drapeau de la France"
+              />
+            </div>
+          </div>
+          <em class="fa-solid fa-chevron-down h-1/2"></em>
+        </li>
         <li class="h-full">
           <a href="./page-connexion.html"
-            ><i class="fa-solid fa-user h-full"></i
+            ><em class="fa-solid fa-user h-full"></em
           ></a>
         </li>
         <li class="h-full">
           <a href="./page-contact.html"
-            ><i class="fa-solid fa-envelope h-full"></i
+            ><em class="fa-solid fa-envelope h-full"></em
           ></a>
         </li>
         <li>
@@ -290,26 +321,11 @@
                 </g>
               </svg>
 
-              <h2 class="w-full">4 lits</h2>
+              <h2 class="w-full">1 Salle de bain</h2>
             </div>
             <div class="flex basis-2/5 items-center text-center lg:text-2xl">
-              <svg
-                class="lg:h-2/3 lg:w-fit"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                width="11.951"
-                height="24.475"
-                viewBox="0 0 11.951 24.475"
-              >
-                <image
-                  id="fourchette"
-                  width="11.951"
-                  height="24.475"
-                  xlink:href="data:image/png;base64,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"
-                />
-              </svg>
-
-              <h2 class="w-full">4 lits</h2>
+              <i class="fa-solid fa-utensils"></i>
+              <h2 class="w-full">Cuisine Équipée</h2>
             </div>
             <div class="flex basis-2/5 items-center text-center lg:text-2xl">
               <svg
@@ -410,159 +426,32 @@
                 </g>
               </svg>
 
-              <h2 class="w-full">4 lits</h2>
+              <h2 class="w-full">Salon de jardin</h2>
             </div>
             <div class="flex basis-2/5 items-center text-center lg:text-2xl">
-              <svg
-                class="lg:h-2/3 lg:w-fit"
-                id="Groupe_2770"
-                data-name="Groupe 2770"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                width="24.439"
-                height="24.439"
-                viewBox="0 0 24.439 24.439"
-              >
-                <defs>
-                  <clipPath id="clip-path">
-                    <rect
-                      id="Rectangle_704"
-                      data-name="Rectangle 704"
-                      width="24.439"
-                      height="24.439"
-                      fill="#163e4b"
-                    />
-                  </clipPath>
-                </defs>
-                <g
-                  id="Groupe_2769"
-                  data-name="Groupe 2769"
-                  clip-path="url(#clip-path)"
-                >
-                  <path
-                    id="Tracé_4201"
-                    data-name="Tracé 4201"
-                    d="M2,0H22.454V5.833H2ZM13.106,8.45h6.06v2.139h-6.06Zm-7.924,0h6.046v2.139H5.182ZM.03,20.775l24.318.254-.03,3.41L0,24.2ZM1.788,7.284H22.56l1.879,12.489c-7.242,0-17.015-.195-24.257-.195Q.976,13.431,1.788,7.284"
-                    fill="#163e4b"
-                    fill-rule="evenodd"
-                  />
-                </g>
-              </svg>
-              <h2 class="w-full">4 lits</h2>
+              <i class="fa-solid fa-tv"></i>
+
+              <h2 class="w-full">Télévision</h2>
             </div>
             <div class="flex basis-2/5 items-center text-center lg:text-2xl">
-              <svg
-                class="lg:h-2/3 lg:w-fit"
-                id="Groupe_2770"
-                data-name="Groupe 2770"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                width="24.439"
-                height="24.439"
-                viewBox="0 0 24.439 24.439"
-              >
-                <defs>
-                  <clipPath id="clip-path">
-                    <rect
-                      id="Rectangle_704"
-                      data-name="Rectangle 704"
-                      width="24.439"
-                      height="24.439"
-                      fill="#163e4b"
-                    />
-                  </clipPath>
-                </defs>
-                <g
-                  id="Groupe_2769"
-                  data-name="Groupe 2769"
-                  clip-path="url(#clip-path)"
-                >
-                  <path
-                    id="Tracé_4201"
-                    data-name="Tracé 4201"
-                    d="M2,0H22.454V5.833H2ZM13.106,8.45h6.06v2.139h-6.06Zm-7.924,0h6.046v2.139H5.182ZM.03,20.775l24.318.254-.03,3.41L0,24.2ZM1.788,7.284H22.56l1.879,12.489c-7.242,0-17.015-.195-24.257-.195Q.976,13.431,1.788,7.284"
-                    fill="#163e4b"
-                    fill-rule="evenodd"
-                  />
-                </g>
-              </svg>
-              <h2 class="w-full">4 lits</h2>
+              <i class="fa-solid fa-wifi"></i>
+              <h2 class="w-full">Connexion Wi-Fi</h2>
             </div>
             <div class="flex basis-2/5 items-center text-center lg:text-2xl">
-              <svg
-                class="lg:h-2/3 lg:w-fit"
-                id="Groupe_2770"
-                data-name="Groupe 2770"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                width="24.439"
-                height="24.439"
-                viewBox="0 0 24.439 24.439"
-              >
-                <defs>
-                  <clipPath id="clip-path">
-                    <rect
-                      id="Rectangle_704"
-                      data-name="Rectangle 704"
-                      width="24.439"
-                      height="24.439"
-                      fill="#163e4b"
-                    />
-                  </clipPath>
-                </defs>
-                <g
-                  id="Groupe_2769"
-                  data-name="Groupe 2769"
-                  clip-path="url(#clip-path)"
-                >
-                  <path
-                    id="Tracé_4201"
-                    data-name="Tracé 4201"
-                    d="M2,0H22.454V5.833H2ZM13.106,8.45h6.06v2.139h-6.06Zm-7.924,0h6.046v2.139H5.182ZM.03,20.775l24.318.254-.03,3.41L0,24.2ZM1.788,7.284H22.56l1.879,12.489c-7.242,0-17.015-.195-24.257-.195Q.976,13.431,1.788,7.284"
-                    fill="#163e4b"
-                    fill-rule="evenodd"
-                  />
-                </g>
-              </svg>
-              <h2 class="w-full">4 lits</h2>
+              <i class="fa-solid fa-paw"></i>
+              <h2 class="w-full">Animaux Autorisés</h2>
             </div>
             <div class="flex basis-2/5 items-center text-center lg:text-2xl">
-              <svg
-                class="lg:h-2/3 lg:w-fit"
-                id="Groupe_2770"
-                data-name="Groupe 2770"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink"
-                width="24.439"
-                height="24.439"
-                viewBox="0 0 24.439 24.439"
-              >
-                <defs>
-                  <clipPath id="clip-path">
-                    <rect
-                      id="Rectangle_704"
-                      data-name="Rectangle 704"
-                      width="24.439"
-                      height="24.439"
-                      fill="#163e4b"
-                    />
-                  </clipPath>
-                </defs>
-                <g
-                  id="Groupe_2769"
-                  data-name="Groupe 2769"
-                  clip-path="url(#clip-path)"
-                >
-                  <path
-                    id="Tracé_4201"
-                    data-name="Tracé 4201"
-                    d="M2,0H22.454V5.833H2ZM13.106,8.45h6.06v2.139h-6.06Zm-7.924,0h6.046v2.139H5.182ZM.03,20.775l24.318.254-.03,3.41L0,24.2ZM1.788,7.284H22.56l1.879,12.489c-7.242,0-17.015-.195-24.257-.195Q.976,13.431,1.788,7.284"
-                    fill="#163e4b"
-                    fill-rule="evenodd"
-                  />
-                </g>
-              </svg>
-              <h2 class="w-full">4 lits</h2>
+              <i class="fa-solid fa-box-archive"></i>
+              <h2 class="w-full">Rangements</h2>
+            </div>
+            <div class="flex basis-2/5 items-center text-center lg:text-2xl">
+              <i class="fa-solid fa-umbrella-beach"></i>
+              <h2 class="w-full">Accès à la plage</h2>
+            </div>
+            <div class="flex basis-2/5 items-center text-center lg:text-2xl">
+              <i class="fa-solid fa-square-parking"></i>
+              <h2 class="w-full">Place de Parking</h2>
             </div>
           </div>
         </section>
